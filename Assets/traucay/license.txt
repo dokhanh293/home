@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dried House Plant
+* source:	https://sketchfab.com/3d-models/dried-house-plant-3df6babfa64442af83f90652324ba680
+* author:	Chris (https://sketchfab.com/christianrehm)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dried House Plant" (https://sketchfab.com/3d-models/dried-house-plant-3df6babfa64442af83f90652324ba680) by Chris (https://sketchfab.com/christianrehm) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

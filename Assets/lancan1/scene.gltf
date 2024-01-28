@@ -1,0 +1,212 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 25926,
+      "max": [
+        5.699999809265137,
+        0.4000000059604645,
+        1.399999976158142
+      ],
+      "min": [
+        -5.699999809265137,
+        -0.4000000059604645,
+        -1.399999976158142
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 311112,
+      "componentType": 5126,
+      "count": 25926,
+      "max": [
+        0.9999856352806091,
+        0.9999836683273315,
+        1.0
+      ],
+      "min": [
+        -0.9999856352806091,
+        -0.9999836683273315,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 155520,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 622224,
+      "componentType": 5126,
+      "count": 1376,
+      "max": [
+        5.150000095367432,
+        0.15000000596046448,
+        0.9316840171813965
+      ],
+      "min": [
+        -5.150000095367432,
+        -0.15000100433826447,
+        -1.3183200359344482
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 638736,
+      "componentType": 5126,
+      "count": 1376,
+      "max": [
+        1.0,
+        0.9993167519569397,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.9993167519569397,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 622080,
+      "componentType": 5125,
+      "count": 2832,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Velivian Fesothe (https://sketchfab.com/fesothe)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/fence-by-velivian-fesothe-d5544622a0aa46d19dba5ffb98832890",
+      "title": "Fence - By Velivian Fesothe"
+    },
+    "generator": "Sketchfab-14.20.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 633408,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 655248,
+      "byteOffset": 633408,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1288656,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "def_surf_mat",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.054985477378704156,
+          0.026352966555718085,
+          0.013215114335043536,
+          1.0
+        ],
+        "metallicFactor": 0.2544769660250393,
+        "roughnessFactor": 0.2544769660250393
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        3
+      ],
+      "name": "white-fence-workfiles-03.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_3"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

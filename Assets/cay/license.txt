@@ -1,0 +1,11 @@
+Model Information:
+* title:	Poplar Tree Pack (9 variations)
+* source:	https://sketchfab.com/3d-models/poplar-tree-pack-9-variations-07ff6c2de4534828957fdfab345be358
+* author:	Jagobo (https://sketchfab.com/Jagobo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Poplar Tree Pack (9 variations)" (https://sketchfab.com/3d-models/poplar-tree-pack-9-variations-07ff6c2de4534828957fdfab345be358) by Jagobo (https://sketchfab.com/Jagobo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

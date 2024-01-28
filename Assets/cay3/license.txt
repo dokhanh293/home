@@ -1,0 +1,11 @@
+Model Information:
+* title:	Monstera plant
+* source:	https://sketchfab.com/3d-models/monstera-plant-5b6b86b22c09491fb456e0bfde86cc9a
+* author:	INTERIA (https://sketchfab.com/noobsipahi724)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Monstera plant" (https://sketchfab.com/3d-models/monstera-plant-5b6b86b22c09491fb456e0bfde86cc9a) by INTERIA (https://sketchfab.com/noobsipahi724) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
