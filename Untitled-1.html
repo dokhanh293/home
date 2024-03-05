@@ -9,14 +9,68 @@
   <body>
 
     <a-scene>
-
+<script type ="text/javascript">
+  
+  
+        function tvClick()
+          {
+            var tv = document.querySelector("#tvScreen");
+            var text = document.querySelector("#tvText");
+  
+            if(!tvOn)
+            {
+              text.setAttribute('visible', 'false');
+              tv.setAttribute('material', 'color', 'white');
+              tvOn = true;
+            }
+            else
+            {
+              tv.setAttribute('material', 'color', 'black');
+              tvOn = false;
+            }
+          }
+  
+  function setLight() {
+          var light = document.querySelector('#main-light');
+          var current_intensity = parseFloat(light.getAttribute('intensity'));
+          var target_intensity; 
+          // Define the target intensity based on the current intensity
+          if (current_intensity === 1) target_intensity = 0.5;
+         // else if (current_intensity === 0.5) target_intensity = 0;
+          else if (current_intensity === 0) target_intensity = 2;
+          else target_intensity = 1;  
+         // Calculate the step size for smooth transition
+          var step = (target_intensity - current_intensity) / 20; // You can adjust the duration
+          // Use requestAnimationFrame for smoother animation
+          function animate() {
+            if ((current_intensity < target_intensity && step > 0) || (current_intensity > target_intensity && step < 0)) {
+              current_intensity += step;
+              light.setAttribute('intensity', current_intensity.toFixed(1));
+              requestAnimationFrame(animate);
+            } else {
+              light.setAttribute('intensity', target_intensity.toFixed(1));
+            }
+          } 
+          animate();
+        }
+</script>
       <!--sky-->
 
       <a-sky src=./texture/sky.jpg></a-sky>
 
+<!--den-->
 
+<!--Setup lighting-->
+<a-light type="directional" awcolor="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
+<a-light id="main-light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
+<!--light button 1-->
+<a-box onclick="setLight()" position="11.341 2.493 1.664" rotation="-0.5878546978042246 90 -90.0128155306426" scale="0.51026 0.34061 0.12635" color="#4CC3D9" event-set__enter="_event: mouseenter; color: #8FF7FF" event-set__leave="_event: mouseleave; color: #4CC3D9" material="" geometry=""></a-box>
+<!--light button 2-->
+<a-box onclick="setLight()" position="5.150 5.908 -4.511" rotation="-0.5878546978042246 90 -90.0128155306426" scale="0.51026 0.34061 0.12635" color="#4CC3D9" event-set__enter="_event: mouseenter; color: #8FF7FF" event-set__leave="_event: mouseleave; color: #4CC3D9" material="" geometry=""></a-box>
+<!--light button 3-->
+<a-box onclick="setLight()" position="7.336 5.961 7.531" rotation="-0.5878546978042246 90 -90.0128155306426" scale="0.51026 0.34061 0.12635" color="#4CC3D9" event-set__enter="_event: mouseenter; color: #8FF7FF" event-set__leave="_event: mouseleave; color: #4CC3D9" material="" geometry=""></a-box>
         <!--grass-->
-        <a-camera position="-43.52433 4.5 80.28671" camera="" rotation="-2.864788975654117 -48.930595704172326 0" look-controls="" wasd-controls="" data-aframe-inspector-original-camera=""> <a-cursor material="" raycaster="" cursor="" geometry=""></a-cursor></a-camera>
+        <a-camera id="cam" position="-43.52433 4.5 80.28671" camera="" rotation="-2.864788975654117 -48.930595704172326 0" look-controls="" wasd-controls="" data-aframe-inspector-original-camera=""> <a-cursor material="" raycaster="" cursor="" geometry=""></a-cursor></a-camera>
 
 
     <a-entity static-body geometry="primitive: box; depth: 200; height: 0.1; width: 200" position="0 -0.5 -13.000" material="shader: flat; side: double; opacity: 1;
@@ -39,7 +93,10 @@
 
         <a-entity id="cay" gltf-model="./Assets/cay/scene.gltf" 
         position="4.186 -2.181 -5.354" rotation="0.069 1.109 -0.239" scale="0.633 0.703 1.019"></a-entity>
-
+       
+ 
+ 
+ 
 
 <!-- lancan -->
 
@@ -148,7 +205,39 @@
 
         <a-box static-body="" geometry="depth: 0.25; height: 14; width: 30" 
         position="4.90588 7.30829 -3.39776" rotation="0 -90.23913385971926 0" material="roughness: 1; src: ./texture/tuong.jpg; repeat: 5 3" scale="0.03682 0.08883 1"></a-box>
-
+        <!--cửa tự động-->
+        <a-box id="myBox" src="texture/anhcong.jpg" animation__move="property: position; to: -46.643 2.487 -0.577; easing: easeInOutQuad; dur: 3000" move-box material geometry="height: 2; width: 1; depth: 1" scale="0.227 3.127 16.548" rotation="0 -179.907 0"></a-box>
+        <script>
+          var boxEl = document.getElementById('myBox');
+        
+          boxEl.addEventListener('click', function () {
+            boxEl.emit('moveBox'); // Use the correct event name moveBox
+          });
+        
+          // Toggle the state
+          var isBoxMoved = false;
+        
+          AFRAME.registerComponent('move-box', {
+            init: function () {
+              var el = this.el;
+        
+              el.addEventListener('moveBox', function () {
+                if (isBoxMoved) {
+                  el.setAttribute('animation__move', 'to: -46.643 2.487 -0.577');
+                } else {
+                  el.setAttribute('animation__move', 'to: -46.675 2.487 -19.988');
+                }
+                isBoxMoved = !isBoxMoved;
+              });
+            },
+          });
+          boxEl.setAttribute('move-box', '');
+        </script>
+<!-- VideoTV using  -->
+<a-entity position="-24.7 1 -10">
+  <a-box position="30.35022 2.0551 10.29895" height="8" width="0.3" depth="13" color="#292929" material="" geometry="" scale="-0.02151 0.21119 0.22433"></a-box>
+    <a-box id="tvScreen" onclick="tvClick()" position="30.35722 2.06048 10.30763" rotation="0 90 0" height="7" width="12" depth="0.1" color="black" material="color: white; side: double; src: ./Assets/videotv/tv.mp4; shader: flat" geometry="" scale="0.23298 0.2241 0.00486"></a-box>
+  </a-entity>
 
 <!-- nhà vệ sinh -->
 
@@ -167,6 +256,10 @@ position="12.5078 6.84951 6.31662" rotation="0.12490479933851947 -0.277311572843
 <a-entity id="ruamat" gltf-model="./Assets/ruamat/scene.gltf" 
 position="12.82134 6.35586 5.7388" rotation="-0.2589769233991321 0.5781144152870007 -0.0011459155902616466" scale="1.29006 1.02233 1.17942"></a-entity>
 
+
+<!--Quaat-->
+<a-entity id="quat" gltf-model="Assets/fan/scene.gltf" position="8.561 -3.738 -2.037" rotation="0 349.728 0" id="door" class="intersectable" scale="0.222 0.170 0.205"  animation="property: rotation; dur: 1500; from: 0 0 0; to: 0 360 0; easing: linear; loop: true;">
+</a-entity>
 <!--choi-->
 
 <a-cylinder position="20.34246 -0.56203 37.68226" radius="1.4" height="10" color="#FFC65D" 
@@ -188,8 +281,7 @@ height="3" color="" src="./texture/fences.jpg" geometry="" scale="3.17074 1.1825
 
 <!-- beca -->
 
-<a-box src="E:\mrvinh\Assets\videoca"
-position="8.88162 5.8366 -1.32688" rotation="0 90.10964539801972 0" color="#4CC3D9" material="" geometry="" scale="1.388 1.11343 3.31989" background="" animation=""></a-box>
+<a-box src="./Assets/videoca/ca.mp4" autoplay="TRUE" muted="TRUE" position="8.88162 5.8366 -1.32688" rotation="0 90.10964539801972 0"  color="#4CC3D9" material="" geometry="" scale="1.388 1.11343 3.31989" background="" animation=""></a-box>
 
 <a-box position="8.88005 5.03875 -1.32674" rotation="0 90 0" color="black" scale="1.388 0.5174 3.32" material="" geometry=""></a-box>
 
@@ -214,21 +306,22 @@ position="8.88162 5.8366 -1.32688" rotation="0 90.10964539801972 0" color="#4CC3
 
 <!-- len tang -->
 <!-- Buttons for moving up/down stairs -->
-<a-box id="up" src="./image/up.jpg" geometry="width: 0.28; height: 0.6; depth: 0.6" position="7.23143 2.78279 5.38003" class="intersectable" material="" rotation="0 88.627 0"></a-box>
-<a-box id="down" src="./image/down.jpg" geometry="depth: 0.6; height: 0.6; width: 0.28" position="7.60253 6.33819 5.52295" class="intersectable" material="" rotation="0 -90.2935648502567 0" scale="0.75675 0.75651 0.50303"></a-box>
+<a-box id="up" src="./image/up.jpg" geometry="width: 0.28; height: 0.6; depth: 0.6" position="7.603 6.327 5.523" class="intersectable" material="" rotation="0 88.627 0"></a-box>
+<a-box id="down" src="./image/down.jpg" geometry="depth: 0.6; height: 0.6; width: 0.28" position="7.231 2.783 5.380" class="intersectable" material="" rotation="0 90.2935648502567 0" scale="0.75675 0.75651 0.50303"></a-box>
 <script>
 var cam = document.querySelector('#cam');
 var ch1 = document.querySelector('#up');
 var ch2 = document.querySelector('#down');
 
 ch1.addEventListener('click', function () {
-  cam.setAttribute('position' , {x: 7.231, y: 2.783, z: 5.380});
+  cam.setAttribute('position' , {x: 7.224, y: 3.025, z: 5.523});
   cam.setAttribute('rotation' , {x: 0, y: 0, z: 0});
 });
 ch2.addEventListener('click', function () {
-  cam.setAttribute('position' , {x: 7.603, y: 6.327, z: 5.523}); 
+  cam.setAttribute('position' , {x: 7.231, y: 5.870, z: 5.380}); 
   cam.setAttribute('rotation' , {x: 0, y: 0, z: 0});
 });
+ 
 </script>
 </a-scene>
 
